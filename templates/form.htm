@@ -1,0 +1,35 @@
+
+{% extends "_base.htm" %}
+
+{% block title %}
+	COMM034 Coursework - vn00197
+{% endblock %}
+
+{% block pageblock %}
+	
+	<div id = "up">
+		<h1> Hi! welcome to the coursework of COMM034 - Cloud Computing module <br>
+		Please enter the values to analyse the stock data of BP.L</h1><br>
+		
+		{% if note %}
+			<h2>{{ note }}</h2>
+		{% endif %}
+	</div>
+	<div id="down">
+	
+		<form id="requirements" method="post" action="/results">
+			<p>Length of price history: <input type="number" name="h" placeholder="Please specify a number" required/></p>
+			<br><br>
+			<p>Number of 'shots': <input type="number" name="d" placeholder="Please specify a number" required/></p>
+			<br><br>
+			<p>Number of days after which to check profit/loss: <input type="number" name="p" placeholder="When do you want to check profit/loss?" required/></p>
+			<br><br>
+			<label for="buy">Buy</label>
+			<input type="radio" id="buy" name="t" value="buy" checked />
+			<label for="sell">Sell</label>
+			<input type="radio" id="sell" name="t" value="sell" />
+			<br><br>
+			<input type="submit" name="calc" class="butt" value="Calculate" />&nbsp;&nbsp;<input type="reset" name="reset" class="butt" value="Reset" />
+		</form>
+	</div>
+{% endblock %}

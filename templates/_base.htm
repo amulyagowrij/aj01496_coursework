@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="/static/def.css" rel="stylesheet" type="text/css">
+    <title>{% block title %}replace title{% endblock %}</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="{{ url_for('audit_handler') }}">Audit page</a>&nbsp;&nbsp;<a href="javascript:history.back()">Go back</a>&nbsp;&nbsp;<a href="index.htm">Go Home</a>&nbsp;&nbsp;<a href="{{ url_for('terminate_handler') }}">Terminate all instances</a></h3>
+        <div class="content">
+            {% block pageblock %}
+            replace page
+            {% endblock %}
+        </div>
+        <div id="footer">
+            <p>COMM034 Coursework - Venkatesh Nagasubramanian - <a href="mailto:vn00197@surrey.ac.uk">vn00197@surrey.ac.uk</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
+
